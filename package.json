@@ -1,0 +1,66 @@
+{
+  "name": "remix-bossa-nova-stack",
+  "private": true,
+  "description": "The Remix Stack with Clerk authentication, Supabase database, Chakra UI, testing, linting, and more.",
+  "keywords": [
+    "remix",
+    "remix-stack",
+    "clerk",
+    "supabase",
+    "chakra-ui",
+    "vercel"
+  ],
+  "license": "MIT",
+  "sideEffects": false,
+  "scripts": {
+    "build": "cross-env NODE_ENV=production remix build",
+    "dev": "cross-env NODE_ENV=development remix dev",
+    "format": "prettier --write .",
+    "postinstall": "remix setup",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "start": "cross-env NODE_ENV=production remix-serve build",
+    "test": "jest",
+    "typecheck": "tsc -b && tsc -b cypress"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "./cypress/*"
+    ]
+  },
+  "dependencies": {
+    "@chakra-ui/react": "latest",
+    "@clerk/remix": "latest",
+    "@emotion/cache": "^11.9.3",
+    "@emotion/react": "^11.8.1",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.8.1",
+    "@remix-run/node": "^1.8.2",
+    "@remix-run/react": "^1.8.2",
+    "@remix-run/serve": "^1.6.3",
+    "@remix-run/vercel": "^1.6.3",
+    "@supabase/supabase-js": "latest",
+    "cross-env": "^7.0.3",
+    "focus-visible": "^5.2.0",
+    "framer-motion": "^6.2.8",
+    "jest": "^28.1.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "remix": "latest"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.8.2",
+    "@remix-run/eslint-config": "^1.8.2",
+    "@testing-library/dom": "^8.13.0",
+    "@testing-library/react": "latest",
+    "@types/jest": "^27.5.1",
+    "@types/react": "^17.0.45",
+    "@types/react-dom": "^17.0.17",
+    "cypress": "^9.6.1",
+    "eslint": "^8.15.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
