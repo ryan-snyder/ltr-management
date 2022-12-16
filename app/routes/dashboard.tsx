@@ -1,10 +1,15 @@
-import { useLoaderData} from '@remix-run/react'
+import { Outlet, useLoaderData} from '@remix-run/react'
 import { ActionFunction, LoaderFunction, json, redirect } from '@remix-run/node'
-import { SignedIn, useAuth, UserProfile} from '@clerk/remix'
+import { SignedIn, useAuth} from '@clerk/remix'
 import { getAuth } from '@clerk/remix/ssr.server'
 import {
     Button,
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
     Heading,
+    SimpleGrid,
     Stack,
     Text,
     useBreakpointValue,
@@ -59,7 +64,6 @@ export default function Index() {
    Since the below will be our dashboard, it should be in the dashboard route
    As per remix convention
    See: https://remix.run/docs/en/v1/guides/routing
-   Edit below to simply be a home page, but I kind of do want
    */
     return (
         <Stack
@@ -80,8 +84,8 @@ export default function Index() {
                     {`Welcome ${data.firstName} ${data.lastName}`}
                 </Heading>
                 <SignedIn>
+                    <Outlet/>
                     <Stack align='center' gap={4}>
-                        <Text>On root page, with nav?</Text>
                         <Button onClick={() => signOut()} bg='gray.500'>
                             Sign out
                         </Button>

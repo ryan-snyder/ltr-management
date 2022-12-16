@@ -125,7 +125,7 @@ __export(root_exports, {
   default: () => root_default,
   loader: () => loader
 });
-var import_react4 = require("@remix-run/react"), import_ssr = require("@clerk/remix/ssr.server"), import_remix = require("@clerk/remix"), import_react5 = require("@chakra-ui/react");
+var import_react5 = require("@remix-run/react"), import_ssr = require("@clerk/remix/ssr.server"), import_remix = require("@clerk/remix"), import_react6 = require("@chakra-ui/react");
 
 // app/theme/theme.ts
 var import_react3 = require("@chakra-ui/react");
@@ -186,181 +186,360 @@ var theme = (0, import_react3.extendTheme)({
 });
 
 // app/root.tsx
-var import_focus_visible = require("focus-visible"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime"), loader = (args) => (0, import_ssr.rootAuthLoader)(args, { loadUser: !0 }), CatchBoundary = (0, import_remix.ClerkCatchBoundary)();
+var import_focus_visible = require("focus-visible");
+
+// app/components/sidebar-with-header.tsx
+var import_react4 = require("@chakra-ui/react"), import_icons = require("@chakra-ui/icons"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime"), Links = ["Dashboard", "Projects", "Team"], NavLink = ({ children }) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Link, {
+  px: 2,
+  py: 1,
+  rounded: "md",
+  _hover: {
+    textDecoration: "none",
+    bg: (0, import_react4.useColorModeValue)("gray.200", "gray.700")
+  },
+  href: "#",
+  children
+}, void 0, !1, {
+  fileName: "app/components/sidebar-with-header.tsx",
+  lineNumber: 24,
+  columnNumber: 3
+}, this);
+function NavBar({ children }) {
+  let { isOpen, onOpen, onClose } = (0, import_react4.useDisclosure)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_jsx_dev_runtime2.Fragment, {
+    children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Box, {
+        bg: (0, import_react4.useColorModeValue)("gray.100", "gray.900"),
+        px: 4,
+        children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Flex, {
+            h: 16,
+            alignItems: "center",
+            justifyContent: "space-between",
+            children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.IconButton, {
+                size: "md",
+                icon: isOpen ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_icons.CloseIcon, {}, void 0, !1, {
+                  fileName: "app/components/sidebar-with-header.tsx",
+                  lineNumber: 50,
+                  columnNumber: 28
+                }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_icons.HamburgerIcon, {}, void 0, !1, {
+                  fileName: "app/components/sidebar-with-header.tsx",
+                  lineNumber: 50,
+                  columnNumber: 44
+                }, this),
+                "aria-label": "Open Menu",
+                display: { md: "none" },
+                onClick: isOpen ? onClose : onOpen
+              }, void 0, !1, {
+                fileName: "app/components/sidebar-with-header.tsx",
+                lineNumber: 48,
+                columnNumber: 11
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.HStack, {
+                spacing: 8,
+                alignItems: "center",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Box, {
+                    children: "Logo"
+                  }, void 0, !1, {
+                    fileName: "app/components/sidebar-with-header.tsx",
+                    lineNumber: 56,
+                    columnNumber: 13
+                  }, this),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.HStack, {
+                    as: "nav",
+                    spacing: 4,
+                    display: { base: "none", md: "flex" },
+                    children: Links.map((link) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(NavLink, {
+                      children: link
+                    }, link, !1, {
+                      fileName: "app/components/sidebar-with-header.tsx",
+                      lineNumber: 62,
+                      columnNumber: 17
+                    }, this))
+                  }, void 0, !1, {
+                    fileName: "app/components/sidebar-with-header.tsx",
+                    lineNumber: 57,
+                    columnNumber: 13
+                  }, this)
+                ]
+              }, void 0, !0, {
+                fileName: "app/components/sidebar-with-header.tsx",
+                lineNumber: 55,
+                columnNumber: 11
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Flex, {
+                alignItems: "center",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Button, {
+                    variant: "solid",
+                    colorScheme: "teal",
+                    size: "sm",
+                    mr: 4,
+                    leftIcon: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_icons.AddIcon, {}, void 0, !1, {
+                      fileName: "app/components/sidebar-with-header.tsx",
+                      lineNumber: 72,
+                      columnNumber: 25
+                    }, this),
+                    children: "Action"
+                  }, void 0, !1, {
+                    fileName: "app/components/sidebar-with-header.tsx",
+                    lineNumber: 67,
+                    columnNumber: 13
+                  }, this),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Menu, {
+                    children: [
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.MenuButton, {
+                        as: import_react4.Button,
+                        rounded: "full",
+                        variant: "link",
+                        cursor: "pointer",
+                        minW: 0,
+                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Avatar, {
+                          size: "sm",
+                          src: "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
+                        }, void 0, !1, {
+                          fileName: "app/components/sidebar-with-header.tsx",
+                          lineNumber: 82,
+                          columnNumber: 17
+                        }, this)
+                      }, void 0, !1, {
+                        fileName: "app/components/sidebar-with-header.tsx",
+                        lineNumber: 76,
+                        columnNumber: 15
+                      }, this),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.MenuList, {
+                        children: [
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.MenuItem, {
+                            children: "Link 1"
+                          }, void 0, !1, {
+                            fileName: "app/components/sidebar-with-header.tsx",
+                            lineNumber: 90,
+                            columnNumber: 17
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.MenuItem, {
+                            children: "Link 2"
+                          }, void 0, !1, {
+                            fileName: "app/components/sidebar-with-header.tsx",
+                            lineNumber: 91,
+                            columnNumber: 17
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.MenuDivider, {}, void 0, !1, {
+                            fileName: "app/components/sidebar-with-header.tsx",
+                            lineNumber: 92,
+                            columnNumber: 17
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.MenuItem, {
+                            children: "Link 3"
+                          }, void 0, !1, {
+                            fileName: "app/components/sidebar-with-header.tsx",
+                            lineNumber: 93,
+                            columnNumber: 17
+                          }, this)
+                        ]
+                      }, void 0, !0, {
+                        fileName: "app/components/sidebar-with-header.tsx",
+                        lineNumber: 89,
+                        columnNumber: 15
+                      }, this)
+                    ]
+                  }, void 0, !0, {
+                    fileName: "app/components/sidebar-with-header.tsx",
+                    lineNumber: 75,
+                    columnNumber: 13
+                  }, this)
+                ]
+              }, void 0, !0, {
+                fileName: "app/components/sidebar-with-header.tsx",
+                lineNumber: 66,
+                columnNumber: 11
+              }, this)
+            ]
+          }, void 0, !0, {
+            fileName: "app/components/sidebar-with-header.tsx",
+            lineNumber: 47,
+            columnNumber: 9
+          }, this),
+          isOpen ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Box, {
+            pb: 4,
+            display: { md: "none" },
+            children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Stack, {
+              as: "nav",
+              spacing: 4,
+              children: Links.map((link) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(NavLink, {
+                children: link
+              }, link, !1, {
+                fileName: "app/components/sidebar-with-header.tsx",
+                lineNumber: 103,
+                columnNumber: 17
+              }, this))
+            }, void 0, !1, {
+              fileName: "app/components/sidebar-with-header.tsx",
+              lineNumber: 101,
+              columnNumber: 13
+            }, this)
+          }, void 0, !1, {
+            fileName: "app/components/sidebar-with-header.tsx",
+            lineNumber: 100,
+            columnNumber: 11
+          }, this) : null
+        ]
+      }, void 0, !0, {
+        fileName: "app/components/sidebar-with-header.tsx",
+        lineNumber: 46,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Box, {
+        children
+      }, void 0, !1, {
+        fileName: "app/components/sidebar-with-header.tsx",
+        lineNumber: 110,
+        columnNumber: 7
+      }, this)
+    ]
+  }, void 0, !0, {
+    fileName: "app/components/sidebar-with-header.tsx",
+    lineNumber: 45,
+    columnNumber: 5
+  }, this);
+}
+
+// app/root.tsx
+var import_jsx_dev_runtime3 = require("react/jsx-dev-runtime"), loader = (args) => (0, import_ssr.rootAuthLoader)(args, ({ request }) => {
+  let { sessionId, userId, getToken } = request.auth;
+  return { cookie: request.headers.get("cookie") ?? "" };
+}), CatchBoundary = (0, import_remix.ClerkCatchBoundary)();
 function Document({
   children,
   title = "LRT Management"
 }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("html", {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("html", {
     lang: "en",
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("head", {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("head", {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Meta, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react5.Meta, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 32,
+            lineNumber: 40,
             columnNumber: 11
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("title", {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("title", {
             children: title
           }, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 33,
+            lineNumber: 41,
             columnNumber: 11
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Links, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react5.Links, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 34,
+            lineNumber: 42,
             columnNumber: 11
           }, this)
         ]
       }, void 0, !0, {
         fileName: "app/root.tsx",
-        lineNumber: 31,
+        lineNumber: 39,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("body", {
         children: [
           children,
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.ScrollRestoration, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react5.ScrollRestoration, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 38,
+            lineNumber: 46,
             columnNumber: 11
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Scripts, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react5.Scripts, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 39,
+            lineNumber: 47,
             columnNumber: 11
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.LiveReload, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react5.LiveReload, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 41,
+            lineNumber: 49,
             columnNumber: 25
           }, this)
         ]
       }, void 0, !0, {
         fileName: "app/root.tsx",
-        lineNumber: 36,
+        lineNumber: 44,
         columnNumber: 9
       }, this)
     ]
   }, void 0, !0, {
     fileName: "app/root.tsx",
-    lineNumber: 30,
+    lineNumber: 38,
     columnNumber: 7
   }, this);
 }
 function App() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Document, {
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react5.ChakraProvider, {
+  let { cookie } = (0, import_react5.useLoaderData)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Document, {
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react6.ChakraProvider, {
       theme,
-      children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react5.Box, {
-        as: "main",
-        minH: "100vh",
-        pos: "relative",
-        children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react4.Outlet, {}, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 53,
-            columnNumber: 21
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react5.Image, {
-            src: "images/cover.png",
-            alt: "Bossa Nova Stack cover",
-            boxSize: "full",
-            objectFit: "cover",
-            pos: "absolute",
-            top: 0,
-            zIndex: -1
-          }, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 55,
-            columnNumber: 21
-          }, this)
-        ]
-      }, void 0, !0, {
+      colorModeManager: typeof cookie == "string" ? (0, import_react6.cookieStorageManagerSSR)(cookie) : import_react6.localStorageManager,
+      children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(NavBar, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react6.Box, {
+          as: "main",
+          minH: "100vh",
+          pos: "relative",
+          children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react5.Outlet, {}, void 0, !1, {
+              fileName: "app/root.tsx",
+              lineNumber: 68,
+              columnNumber: 21
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react6.Image, {
+              src: "images/cover.png",
+              alt: "Bossa Nova Stack cover",
+              boxSize: "full",
+              objectFit: "cover",
+              pos: "absolute",
+              top: 0,
+              zIndex: -1
+            }, void 0, !1, {
+              fileName: "app/root.tsx",
+              lineNumber: 70,
+              columnNumber: 21
+            }, this)
+          ]
+        }, void 0, !0, {
+          fileName: "app/root.tsx",
+          lineNumber: 67,
+          columnNumber: 17
+        }, this)
+      }, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 52,
-        columnNumber: 17
+        lineNumber: 66,
+        columnNumber: 15
       }, this)
     }, void 0, !1, {
       fileName: "app/root.tsx",
-      lineNumber: 51,
+      lineNumber: 61,
       columnNumber: 13
     }, this)
   }, void 0, !1, {
     fileName: "app/root.tsx",
-    lineNumber: 50,
+    lineNumber: 60,
     columnNumber: 9
   }, this);
 }
 var root_default = (0, import_remix.ClerkApp)(App);
 
-// app/routes/sign-in/$.tsx
-var __exports = {};
-__export(__exports, {
-  default: () => SignInRoute
-});
-var import_react6 = require("@chakra-ui/react"), import_remix2 = require("@clerk/remix"), import_jsx_dev_runtime3 = require("react/jsx-dev-runtime");
-function SignInRoute() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react6.Center, {
-    height: "100vh",
-    p: 10,
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_remix2.SignIn, {
-      routing: "path",
-      path: "/sign-in",
-      signUpUrl: "/sign-up"
-    }, void 0, !1, {
-      fileName: "app/routes/sign-in/$.tsx",
-      lineNumber: 7,
-      columnNumber: 13
-    }, this)
-  }, void 0, !1, {
-    fileName: "app/routes/sign-in/$.tsx",
-    lineNumber: 6,
-    columnNumber: 9
-  }, this);
-}
-
-// app/routes/sign-up/$.tsx
-var __exports2 = {};
-__export(__exports2, {
-  default: () => SignUpRoute
-});
-var import_react7 = require("@chakra-ui/react"), import_remix3 = require("@clerk/remix"), import_jsx_dev_runtime4 = require("react/jsx-dev-runtime");
-function SignUpRoute() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react7.Center, {
-    height: "100vh",
-    p: 10,
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_remix3.SignUp, {
-      routing: "path",
-      path: "/sign-up",
-      signInUrl: "/sign-in"
-    }, void 0, !1, {
-      fileName: "app/routes/sign-up/$.tsx",
-      lineNumber: 7,
-      columnNumber: 13
-    }, this)
-  }, void 0, !1, {
-    fileName: "app/routes/sign-up/$.tsx",
-    lineNumber: 6,
-    columnNumber: 9
-  }, this);
-}
-
-// app/routes/index.tsx
-var routes_exports = {};
-__export(routes_exports, {
+// app/routes/dashboard.tsx
+var dashboard_exports = {};
+__export(dashboard_exports, {
   action: () => action,
   default: () => Index,
   loader: () => loader2
 });
-var import_react9 = require("@remix-run/react"), import_node2 = require("@remix-run/node"), import_remix4 = require("@clerk/remix"), import_ssr3 = require("@clerk/remix/ssr.server"), import_react10 = require("@chakra-ui/react");
+var import_react8 = require("@remix-run/react"), import_node2 = require("@remix-run/node"), import_remix2 = require("@clerk/remix"), import_ssr3 = require("@clerk/remix/ssr.server"), import_react9 = require("@chakra-ui/react");
 
 // app/components/logo-banner.tsx
-var import_react8 = require("@chakra-ui/react"), import_jsx_dev_runtime5 = require("react/jsx-dev-runtime");
+var import_react7 = require("@chakra-ui/react"), import_jsx_dev_runtime4 = require("react/jsx-dev-runtime");
 function LogoBanner() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react8.Flex, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react7.Flex, {
     direction: { base: "column", md: "row" },
     align: "center",
     justify: "center",
@@ -368,7 +547,7 @@ function LogoBanner() {
     gap: 8,
     py: 4,
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react8.Image, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react7.Image, {
         h: 6,
         src: "images/remix.svg"
       }, void 0, !1, {
@@ -376,7 +555,7 @@ function LogoBanner() {
         lineNumber: 13,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react8.Image, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react7.Image, {
         h: 8,
         src: "images/clerk.svg"
       }, void 0, !1, {
@@ -384,7 +563,7 @@ function LogoBanner() {
         lineNumber: 14,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react8.Image, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react7.Image, {
         h: 8,
         src: "images/supabase.svg"
       }, void 0, !1, {
@@ -392,7 +571,7 @@ function LogoBanner() {
         lineNumber: 15,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react8.Image, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react7.Image, {
         h: 8,
         src: "images/chakra.png"
       }, void 0, !1, {
@@ -400,7 +579,7 @@ function LogoBanner() {
         lineNumber: 16,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react8.Image, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react7.Image, {
         h: 8,
         src: "images/vercel.svg"
       }, void 0, !1, {
@@ -438,8 +617,8 @@ var import_ssr2 = require("@clerk/remix/ssr.server"), import_supabase_js = requi
   }
 };
 
-// app/routes/index.tsx
-var import_luxon = require("luxon"), import_clerk_sdk_node = require("@clerk/clerk-sdk-node"), import_jsx_dev_runtime6 = require("react/jsx-dev-runtime"), dbErrorMessage = 'Something is missing.<br/>Did you set up Supabase yet?<br/>You can find the <a href="https://github.com/clerkinc/remix-bossa-nova-stack#configuring-the-database" target="_blank">instructions in the README file</a>.', loader2 = async ({ request }) => {
+// app/routes/dashboard.tsx
+var import_clerk_sdk_node = require("@clerk/clerk-sdk-node"), import_jsx_dev_runtime5 = require("react/jsx-dev-runtime"), dbErrorMessage = 'Something is missing.<br/>Did you set up Supabase yet?<br/>You can find the <a href="https://github.com/clerkinc/remix-bossa-nova-stack#configuring-the-database" target="_blank">instructions in the README file</a>.', loader2 = async ({ request }) => {
   let { userId } = await (0, import_ssr3.getAuth)(request);
   if (console.log(userId), !userId)
     return (0, import_node2.redirect)("/sign-in");
@@ -455,8 +634,8 @@ var import_luxon = require("luxon"), import_clerk_sdk_node = require("@clerk/cle
   return db && await db.from("songs").insert({ body: song, user_id: userId }), null;
 };
 function Index() {
-  let { signOut } = (0, import_remix4.useAuth)(), data = (0, import_react9.useLoaderData)(), headingSize = (0, import_react10.useBreakpointValue)({ base: "lg", sm: "2xl", lg: "4xl" }), current = import_luxon.DateTime.now(), weekdays = import_luxon.Info.weekdays().slice(0, 5);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Stack, {
+  let { signOut } = (0, import_remix2.useAuth)(), data = (0, import_react8.useLoaderData)(), headingSize = (0, import_react9.useBreakpointValue)({ base: "lg", sm: "2xl", lg: "4xl" });
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react9.Stack, {
     justify: "center",
     textAlign: "center",
     h: "100vh",
@@ -464,12 +643,239 @@ function Index() {
     color: "white",
     gap: 20,
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Stack, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react9.Stack, {
         gap: 4,
         p: { base: 4, md: 8 },
         align: "center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Heading, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react9.Heading, {
+            as: "h1",
+            size: headingSize,
+            textTransform: "uppercase",
+            color: "green.400",
+            children: `Welcome ${data.firstName} ${data.lastName}`
+          }, void 0, !1, {
+            fileName: "app/routes/dashboard.tsx",
+            lineNumber: 78,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_remix2.SignedIn, {
+            children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react8.Outlet, {}, void 0, !1, {
+                fileName: "app/routes/dashboard.tsx",
+                lineNumber: 87,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react9.Stack, {
+                align: "center",
+                gap: 4,
+                children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react9.Button, {
+                  onClick: () => signOut(),
+                  bg: "gray.500",
+                  children: "Sign out"
+                }, void 0, !1, {
+                  fileName: "app/routes/dashboard.tsx",
+                  lineNumber: 89,
+                  columnNumber: 25
+                }, this)
+              }, void 0, !1, {
+                fileName: "app/routes/dashboard.tsx",
+                lineNumber: 88,
+                columnNumber: 21
+              }, this)
+            ]
+          }, void 0, !0, {
+            fileName: "app/routes/dashboard.tsx",
+            lineNumber: 86,
+            columnNumber: 17
+          }, this)
+        ]
+      }, void 0, !0, {
+        fileName: "app/routes/dashboard.tsx",
+        lineNumber: 77,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(LogoBanner, {}, void 0, !1, {
+        fileName: "app/routes/dashboard.tsx",
+        lineNumber: 95,
+        columnNumber: 13
+      }, this)
+    ]
+  }, void 0, !0, {
+    fileName: "app/routes/dashboard.tsx",
+    lineNumber: 69,
+    columnNumber: 9
+  }, this);
+}
+
+// app/routes/dashboard/index.tsx
+var dashboard_exports2 = {};
+__export(dashboard_exports2, {
+  default: () => Dashboard,
+  loader: () => loader3
+});
+var import_node3 = require("@remix-run/node"), import_ssr4 = require("@clerk/remix/ssr.server"), import_react10 = require("@chakra-ui/react"), import_luxon = require("luxon"), import_jsx_dev_runtime6 = require("react/jsx-dev-runtime"), loader3 = async ({ request }) => {
+  let { userId } = await (0, import_ssr4.getAuth)(request);
+  return console.log(userId), userId ? null : (0, import_node3.redirect)("/sign-in");
+};
+function Dashboard() {
+  let current = import_luxon.DateTime.now(), weekdays = import_luxon.Info.weekdays().slice(0, 5);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Stack, {
+    spacing: 4,
+    align: "center",
+    direction: "row",
+    children: weekdays.map(
+      (day, ind) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Card, {
+        bgColor: ind == current.weekday - 1 ? "darkgray" : "white",
+        textColor: "black",
+        children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.CardHeader, {
+            children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Heading, {
+              size: "md",
+              children: day
+            }, void 0, !1, {
+              fileName: "app/routes/dashboard/index.tsx",
+              lineNumber: 41,
+              columnNumber: 41
+            }, this)
+          }, void 0, !1, {
+            fileName: "app/routes/dashboard/index.tsx",
+            lineNumber: 40,
+            columnNumber: 37
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.CardBody, {
+            children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Text, {
+              children: "X hours worked"
+            }, void 0, !1, {
+              fileName: "app/routes/dashboard/index.tsx",
+              lineNumber: 44,
+              columnNumber: 41
+            }, this)
+          }, void 0, !1, {
+            fileName: "app/routes/dashboard/index.tsx",
+            lineNumber: 43,
+            columnNumber: 37
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.CardFooter, {
+            children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Text, {
+              children: current.minus({ days: current.weekday - 1 - ind }).toLocaleString(import_luxon.DateTime.DATE_MED)
+            }, void 0, !1, {
+              fileName: "app/routes/dashboard/index.tsx",
+              lineNumber: 47,
+              columnNumber: 41
+            }, this)
+          }, void 0, !1, {
+            fileName: "app/routes/dashboard/index.tsx",
+            lineNumber: 46,
+            columnNumber: 37
+          }, this)
+        ]
+      }, ind, !0, {
+        fileName: "app/routes/dashboard/index.tsx",
+        lineNumber: 39,
+        columnNumber: 33
+      }, this)
+    )
+  }, void 0, !1, {
+    fileName: "app/routes/dashboard/index.tsx",
+    lineNumber: 37,
+    columnNumber: 21
+  }, this);
+}
+
+// app/routes/sign-in/$.tsx
+var __exports = {};
+__export(__exports, {
+  default: () => SignInRoute
+});
+var import_react11 = require("@chakra-ui/react"), import_remix3 = require("@clerk/remix"), import_jsx_dev_runtime7 = require("react/jsx-dev-runtime");
+function SignInRoute() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(import_react11.Center, {
+    height: "100vh",
+    p: 10,
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(import_remix3.SignIn, {
+      routing: "path",
+      path: "/sign-in",
+      signUpUrl: "/sign-up",
+      afterSignInUrl: "/dashboard"
+    }, void 0, !1, {
+      fileName: "app/routes/sign-in/$.tsx",
+      lineNumber: 7,
+      columnNumber: 13
+    }, this)
+  }, void 0, !1, {
+    fileName: "app/routes/sign-in/$.tsx",
+    lineNumber: 6,
+    columnNumber: 9
+  }, this);
+}
+
+// app/routes/sign-up/$.tsx
+var __exports2 = {};
+__export(__exports2, {
+  default: () => SignUpRoute
+});
+var import_react12 = require("@chakra-ui/react"), import_remix4 = require("@clerk/remix"), import_jsx_dev_runtime8 = require("react/jsx-dev-runtime");
+function SignUpRoute() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react12.Center, {
+    height: "100vh",
+    p: 10,
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_remix4.SignUp, {
+      routing: "path",
+      path: "/sign-up",
+      signInUrl: "/sign-in",
+      afterSignUpUrl: "/dashboard"
+    }, void 0, !1, {
+      fileName: "app/routes/sign-up/$.tsx",
+      lineNumber: 7,
+      columnNumber: 13
+    }, this)
+  }, void 0, !1, {
+    fileName: "app/routes/sign-up/$.tsx",
+    lineNumber: 6,
+    columnNumber: 9
+  }, this);
+}
+
+// app/routes/index.tsx
+var routes_exports = {};
+__export(routes_exports, {
+  action: () => action2,
+  default: () => Index2,
+  loader: () => loader4
+});
+var import_react13 = require("@remix-run/react"), import_node4 = require("@remix-run/node"), import_remix5 = require("@clerk/remix"), import_ssr5 = require("@clerk/remix/ssr.server"), import_react14 = require("@chakra-ui/react");
+var import_clerk_sdk_node2 = require("@clerk/clerk-sdk-node"), import_jsx_dev_runtime9 = require("react/jsx-dev-runtime"), dbErrorMessage2 = 'Something is missing.<br/>Did you set up Supabase yet?<br/>You can find the <a href="https://github.com/clerkinc/remix-bossa-nova-stack#configuring-the-database" target="_blank">instructions in the README file</a>.', loader4 = async ({ request }) => {
+  let { userId } = await (0, import_ssr5.getAuth)(request);
+  if (console.log(userId), !userId)
+    return (0, import_node4.redirect)("/sign-in");
+  let { firstName, lastName } = await import_clerk_sdk_node2.users.getUser(userId);
+  console.log("Got user in loader..."), console.log(`${firstName} ${lastName}`);
+  let db = await getDB(request);
+  if (!db)
+    return (0, import_node4.json)({ error: dbErrorMessage2 });
+  let { data } = await db.from("songs").select();
+  return data ? (0, import_node4.json)({ firstName, lastName }) : (0, import_node4.json)({ error: dbErrorMessage2 });
+}, action2 = async ({ request }) => {
+  let formData = await request.formData(), { userId } = await (0, import_ssr5.getAuth)(request), song = formData.get("add-song"), db = await getDB(request);
+  return db && await db.from("songs").insert({ body: song, user_id: userId }), null;
+};
+function Index2() {
+  let { signOut } = (0, import_remix5.useAuth)(), data = (0, import_react13.useLoaderData)(), headingSize = (0, import_react14.useBreakpointValue)({ base: "lg", sm: "2xl", lg: "4xl" });
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react14.Stack, {
+    justify: "center",
+    textAlign: "center",
+    h: "100vh",
+    flex: 1,
+    color: "white",
+    gap: 20,
+    children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react14.Stack, {
+        gap: 4,
+        p: { base: 4, md: 8 },
+        align: "center",
+        children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react14.Heading, {
             as: "h1",
             size: headingSize,
             textTransform: "uppercase",
@@ -477,115 +883,62 @@ function Index() {
             children: `Welcome ${data.firstName} ${data.lastName}`
           }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 90,
+            lineNumber: 74,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_remix4.SignedIn, {
-            children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Stack, {
-                spacing: 4,
-                align: "center",
-                direction: "row",
-                children: weekdays.map(
-                  (day, ind) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Card, {
-                    variant: "filled",
-                    children: [
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.CardHeader, {
-                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Heading, {
-                          size: "md",
-                          children: day
-                        }, void 0, !1, {
-                          fileName: "app/routes/index.tsx",
-                          lineNumber: 103,
-                          columnNumber: 41
-                        }, this)
-                      }, void 0, !1, {
-                        fileName: "app/routes/index.tsx",
-                        lineNumber: 102,
-                        columnNumber: 37
-                      }, this),
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.CardBody, {
-                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Text, {
-                          children: "X hours worked"
-                        }, void 0, !1, {
-                          fileName: "app/routes/index.tsx",
-                          lineNumber: 106,
-                          columnNumber: 41
-                        }, this)
-                      }, void 0, !1, {
-                        fileName: "app/routes/index.tsx",
-                        lineNumber: 105,
-                        columnNumber: 37
-                      }, this),
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.CardFooter, {
-                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Text, {
-                          children: current.minus({ days: current.weekday - 1 - ind }).toLocaleString(import_luxon.DateTime.DATE_MED)
-                        }, void 0, !1, {
-                          fileName: "app/routes/index.tsx",
-                          lineNumber: 109,
-                          columnNumber: 41
-                        }, this)
-                      }, void 0, !1, {
-                        fileName: "app/routes/index.tsx",
-                        lineNumber: 108,
-                        columnNumber: 37
-                      }, this)
-                    ]
-                  }, ind, !0, {
-                    fileName: "app/routes/index.tsx",
-                    lineNumber: 101,
-                    columnNumber: 33
-                  }, this)
-                )
-              }, void 0, !1, {
-                fileName: "app/routes/index.tsx",
-                lineNumber: 99,
-                columnNumber: 21
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Stack, {
-                align: "center",
-                gap: 4,
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react10.Button, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_remix5.SignedIn, {
+            children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react14.Stack, {
+              align: "center",
+              gap: 4,
+              children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react14.Text, {
+                  children: "On root page, with nav?"
+                }, void 0, !1, {
+                  fileName: "app/routes/index.tsx",
+                  lineNumber: 84,
+                  columnNumber: 25
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react14.Button, {
                   onClick: () => signOut(),
                   bg: "gray.500",
                   children: "Sign out"
                 }, void 0, !1, {
                   fileName: "app/routes/index.tsx",
-                  lineNumber: 115,
+                  lineNumber: 85,
                   columnNumber: 25
                 }, this)
-              }, void 0, !1, {
-                fileName: "app/routes/index.tsx",
-                lineNumber: 114,
-                columnNumber: 21
-              }, this)
-            ]
-          }, void 0, !0, {
+              ]
+            }, void 0, !0, {
+              fileName: "app/routes/index.tsx",
+              lineNumber: 83,
+              columnNumber: 21
+            }, this)
+          }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 98,
+            lineNumber: 82,
             columnNumber: 17
           }, this)
         ]
       }, void 0, !0, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 89,
+        lineNumber: 73,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(LogoBanner, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(LogoBanner, {}, void 0, !1, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 121,
+        lineNumber: 91,
         columnNumber: 13
       }, this)
     ]
   }, void 0, !0, {
     fileName: "app/routes/index.tsx",
-    lineNumber: 81,
+    lineNumber: 65,
     columnNumber: 9
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "409ebb9e", entry: { module: "/build/entry.client-BMVQNKB3.js", imports: ["/build/_shared/chunk-DOZEDBE6.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OU773XT6.js", imports: ["/build/_shared/chunk-WCDRYRY5.js", "/build/_shared/chunk-J4N2SAV2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-AVTHBLFR.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in/$": { id: "routes/sign-in/$", parentId: "root", path: "sign-in/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in/$-WXDXPEI3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up/$": { id: "routes/sign-up/$", parentId: "root", path: "sign-up/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up/$-MVKVKSGW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-409EBB9E.js" };
+var assets_manifest_default = { version: "bedb9a71", entry: { module: "/build/entry.client-DEUSACYR.js", imports: ["/build/_shared/chunk-LZV3VLMK.js", "/build/_shared/chunk-TVFDCZJH.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-RVBO472S.js", imports: ["/build/_shared/chunk-TSY52VUB.js", "/build/_shared/chunk-72T7ZQZP.js", "/build/_shared/chunk-IWXAX4EM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/dashboard": { id: "routes/dashboard", parentId: "root", path: "dashboard", index: void 0, caseSensitive: void 0, module: "/build/routes/dashboard-XZV65PAA.js", imports: ["/build/_shared/chunk-VVA43QMU.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/dashboard/index": { id: "routes/dashboard/index", parentId: "routes/dashboard", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/dashboard/index-ZEK3CFL7.js", imports: ["/build/_shared/chunk-TSY52VUB.js", "/build/_shared/chunk-IWXAX4EM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-6HAJDARZ.js", imports: ["/build/_shared/chunk-VVA43QMU.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in/$": { id: "routes/sign-in/$", parentId: "root", path: "sign-in/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in/$-M3O45TR6.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up/$": { id: "routes/sign-up/$", parentId: "root", path: "sign-up/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up/$-TU4JJNTX.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-BEDB9A71.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -596,6 +949,22 @@ var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath
     index: void 0,
     caseSensitive: void 0,
     module: root_exports
+  },
+  "routes/dashboard": {
+    id: "routes/dashboard",
+    parentId: "root",
+    path: "dashboard",
+    index: void 0,
+    caseSensitive: void 0,
+    module: dashboard_exports
+  },
+  "routes/dashboard/index": {
+    id: "routes/dashboard/index",
+    parentId: "routes/dashboard",
+    path: void 0,
+    index: !0,
+    caseSensitive: void 0,
+    module: dashboard_exports2
   },
   "routes/sign-in/$": {
     id: "routes/sign-in/$",
